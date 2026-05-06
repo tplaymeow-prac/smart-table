@@ -23,14 +23,11 @@ function collectState() {
     const state = processFormData(new FormData(sampleTable.container));
     const rowsPerPage = parseInt(state.rowsPerPage);    // приведём количество страниц к числу
     const page = parseInt(state.page ?? 1);                // номер страницы по умолчанию 1 и тоже число
-    const totalFrom = parseFloat(state.totalFrom);
-    const totalTo = parseFloat(state.totalTo);
 
     return {                                            // расширьте существующий return вот так
         ...state,
         rowsPerPage,
-        page,
-        total: [totalFrom, totalTo],
+        page
     };
 
     return {
